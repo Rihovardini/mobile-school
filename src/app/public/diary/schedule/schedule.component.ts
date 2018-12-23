@@ -172,9 +172,9 @@ export class ScheduleComponent implements OnInit {
 
   async presentToastWithOptions() {
     const toast = await this.toastController.create({
-      message: 'Немає даних',
+      message: 'Немає даних про розклад',
       position: 'top',
-      color: 'warning',
+      color: 'danger',
       duration: 2000
     });
     toast.present();
