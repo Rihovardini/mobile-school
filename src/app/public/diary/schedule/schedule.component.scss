@@ -1,0 +1,23 @@
+.schedule {
+    margin-top: 56px;
+    text-align: center;
+    margin-bottom: 4%;
+    .tables {
+        margin-top: 6%;
+    }
+    .schedule-flexed{
+        display: flex;
+        justify-content: center;
+    }
+    .lesson-number {
+        width: 10%;
+      }
+      
+      .lesson-name {
+        width: auto;
+      }
+      
+      .lesson-description {
+        width: auto;
+      }
+}

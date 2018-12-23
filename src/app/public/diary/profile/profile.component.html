@@ -1,0 +1,15 @@
+<ion-content>
+  <div class="profile" *ngIf="!loading">
+    <ion-card>
+      <ion-img [src]="imgUrl"></ion-img>
+      <ion-card-header>
+        <ion-card-title>{{ fullName }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Логін: {{ login }}</p>
+        <p>Дата народження: {{ dateOfBirth }}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+<ngx-loading [show] = "loading"></ngx-loading>
