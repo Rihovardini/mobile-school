@@ -15,7 +15,7 @@
         </ion-row>
       </ion-grid>
     </div>
-    <div class="schedule-content" padding>
+    <div class="schedule-content" (swipeleft)="switchSchedule(true)" (swiperight)="switchSchedule(false)" padding>
       <div *ngFor="let daysOfWeek of weekSchedule" class="tables">
         <p-table [columns]="cols" [value]="daysOfWeek.daySchedule">
           <ng-template pTemplate="caption">

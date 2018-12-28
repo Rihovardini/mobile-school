@@ -8,7 +8,8 @@ import {
 import { Router } from '@angular/router';
 import { AuthenticationService } from './authentication.service';
 import { throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -47,20 +48,13 @@ export class TokenInterceptorService {
     return next
       .handle(tokenizedReq).pipe(
         catchError((errorResponse: HttpErrorResponse) => {
-            if (errorResponse.status === 401) {
+            if (errorResponse.status === 401 || errorResponse.status === 400) {
               this.authService.logOut();
               this.router.navigate(['/login']);
             }
             return throwError(errorResponse);
           })
       );
-      // .catch((errorResponse: HttpErrorResponse) => {
-      //   if (errorResponse.status === 401) {
-      //     this.authService.logOut();
-      //     this.router.navigate(['/login']);
-      //   }
-      //   return throwError(errorResponse);
-      // });
   }
 
   appendBaseUrl(url) {

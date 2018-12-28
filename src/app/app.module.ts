@@ -15,6 +15,8 @@ import { RefreshInterceptorService } from './services/refresh-interceptor.servic
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { LoginGuard } from './public/login/login.guard';
 import { StudentBookGuard } from './public/student-book/student-book.guard';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,7 +27,8 @@ import { StudentBookGuard } from './public/student-book/student-book.guard';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     StatusBar,

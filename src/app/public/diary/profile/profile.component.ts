@@ -27,7 +27,9 @@ export class ProfileComponent implements OnInit {
       this.dateOfBirth = student.dateOfBirth;
       this.login = student.login;
       this.imgUrl = student.avatar || '../assets/user.jpeg';
-      this.loading = false;
+      setTimeout(() => {
+        this.loading = false;
+      }, 0);
     });
   }
 

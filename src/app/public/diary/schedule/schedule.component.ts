@@ -18,7 +18,7 @@ export class ScheduleComponent implements OnInit {
 
   public offset = 0;
 
-  public saveOffset: number;
+  public saveOffset = 0;
 
   public menuItems: MenuItem[];
 
